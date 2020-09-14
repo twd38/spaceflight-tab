@@ -1,0 +1,96 @@
+body {
+  font-family: sans-serif;
+  font-size: 18px;
+  line-height: 1.8;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: black;
+}
+
+img.bg {
+  /* Set rules to fill background */
+  min-height: 100%;
+  min-width: 1024px;
+	
+  /* Set up proportionate scaling */
+  width: 100%;
+  height: auto;
+	
+  /* Set up positioning */
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+@media screen and (max-width: 1024px) { /* Specific to this particular image */
+  img.bg {
+    left: 50%;
+    margin-left: -512px;   /* 50% */
+  }
+}
+
+a,
+body {
+  color: hsla(0, 0%, 100%, 0.75);
+}
+a {
+  text-decoration: none;
+}
+a:hover {
+  color: #fff;
+}
+#scene {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: cover;
+  opacity: 0;
+  transition: opacity 0.25s;
+}
+
+body:hover ul.nav {
+  opacity: 1;
+}
+
+.attribution {
+  position: absolute;
+  bottom: 15px;
+  left: 20px;
+  padding: 10px 18px;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+#photographerName {
+  font-weight: 500;
+  padding-bottom: 2px;
+}
+.attribution .attribution-copy {
+  font-size: 12px;
+  font-weight: 200;
+  line-height: 16px;
+  float: left;
+  text-align: left;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.attribution .attribution-copy .fa {
+  padding: 10px 8px 0px 0px;
+  font-size: 12px;
+  text-align: center;
+  text-decoration: none;
+}
+
+#buyButton {
+  position: absolute;
+  font-size: 12px;
+  text-transform: uppercase;
+  bottom: 15px;
+  right: 20px;
+  padding: 10px 18px;
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.8);
+}
