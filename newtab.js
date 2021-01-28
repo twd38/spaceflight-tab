@@ -14,10 +14,13 @@ let key = manifest.API_KEY
 // let link = "";
 
 window.onload = function() {
-    $.get("https://api.airtable.com/v0/appQWmCbvBOseboyN/photos?api_key="+key, function(data, status){
-        allPhotos = data.records.length
+    $.get("https://api.airtable.com/v0/appQWmCbvBOseboyN/photos?api_key="+key+"&fields%5B%5D=photoID&sort%5B0%5D%5Bfield%5D=photoID&sort%5B0%5D%5Bdirection%5D=desc", function(data, status){
+        allPhotos = data.records[0].fields.photoID
         mountNewImage(Math.floor(Math.random() * allPhotos) + 1);
     })    
+    $.get("https://api.airtable.com/v0/appQWmCbvBOseboyN/photographers?api_key="+key, function(data, status){
+        allPhotographers = data.records
+    })   
 };
 
 mountNewImage = function(randNumber) {
@@ -36,7 +39,11 @@ mountNewImage = function(randNumber) {
         document.getElementById("instagram").href = "https://instagram.com/"+photoData.instagram;
         document.getElementById("facebook").href = "https://facebook.com/"+photoData.facebook;
         document.getElementById("link").href = photoData.website;
-        document.getElementById("buyLink").href = photoData.purchase_link;
+
+        if(photoData.patreon){
+            document.getElementById("patreon").innerHTML = `<a id="patreonLink" href="https://www.patreon.com/${photoData.patreon}"><img id="patreonImg" src="/img/patreon.png" alt=""></a>`
+        }
+
     });
 };
 
