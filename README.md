@@ -1,6 +1,7 @@
 # Spaceflight Tab - A Google Chrome extension for space enthusiasts
 
-![Table Demo](chrome_store_files/demo.gif)
+![Spaceflight Tab Browser Mockup](mockup.png)
+
 
 ## What is Spaceflight Tab?
 Spaceflight Tab is Google Chrome extension that presents a new spaceflight related image each time the user opens a new tab. Additionally, the user can access the photographer's social media profiles and can purchase the photos with a click of a button.
